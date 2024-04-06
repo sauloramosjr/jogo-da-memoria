@@ -98,3 +98,16 @@ header span:nth-of-type(2) span {
     rotate: y 0deg;
   }
 }
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  color: black;
+}

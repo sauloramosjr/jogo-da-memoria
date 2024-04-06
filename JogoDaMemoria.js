@@ -53,6 +53,7 @@ function atualizarPlacar() {
 
 // Adiciona um evento de clique para virar as cartas
 GridJogo.addEventListener('click', function (event) {
+  // pega o elemento que foi clicado
   const clickedCard = event.target;
 
   // Verifica se o elemento clicado é uma carta e se pode ser virada
