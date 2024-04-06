@@ -17,10 +17,10 @@ let flippedCards = [];
 
 // Função para criar o tabuleiro do jogo
 function criarTabuleiro(figuras) {
-  //duplica as figuras para criar pares
+  // duplica as figuras para criar pares
   const tabuleiro = figuras.concat(figuras);
 
-  //embaralhar
+  // embaralhar
   for (let i = tabuleiro.length - 1; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * (i + 1));
     const temp = tabuleiro[i];
@@ -28,12 +28,27 @@ function criarTabuleiro(figuras) {
     tabuleiro[randomIndex] = temp;
   }
 
-  //adiciona ao Grid-Jogo elementos que possuem como valor o icone de carta virada 🎴, e o que está escondido em baixo da carta está no seu data-value
-  tabuleiro.forEach((figura) => {
+  // adiciona ao Grid-Jogo elementos que possuem como valor o icone de carta virada 🎴, e o que está escondido em baixo da carta está no seu data-value
+  tabuleiro.forEach((figura, index) => {
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.value = figura;
-    card.textContent = '🎴';
+
+    // Define o texto da carta como a figura (inicialmente visível)
+    card.textContent = figura;
+
+    // Adiciona a classe 'flipped' para mostrar a carta inicialmente
+    card.classList.add('flipped');
+    card.classList.add('inicial');
+
+    // Após meio segundo, remove a classe 'flipped' e esconde a figura
+    setTimeout(() => {
+      card.classList.remove('inicial');
+      card.classList.remove('flipped');
+      card.textContent = '🎴';
+    }, 500);
+
+    // Adiciona a carta ao tabuleiro
     GridJogo.appendChild(card);
   });
 }

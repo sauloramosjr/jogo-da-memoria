@@ -39,6 +39,9 @@ header span:nth-of-type(2) span {
   font-size: 70px;
   animation: flip-inicial 0.3s ease forwards;
 }
+.inicial {
+  animation: flip 0.3s ease forwards !important;
+}
 
 /* Estilos para o botao reiniciar */
 #btn-reiniciar {
