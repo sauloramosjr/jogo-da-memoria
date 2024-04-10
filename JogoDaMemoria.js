@@ -46,7 +46,7 @@ function criarTabuleiro(figuras) {
       card.classList.remove('inicial');
       card.classList.remove('flipped');
       card.textContent = '🎴';
-    }, 500);
+    }, 1500);
 
     // Adiciona a carta ao tabuleiro
     GridJogo.appendChild(card);
